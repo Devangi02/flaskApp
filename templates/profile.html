@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ user.name }}'s Profile</title>
+</head>
+<body>
+    <h1>{{ user.name }}'s Profile</h1>
+    <ul>
+        <li>User Name: {{ user.name }}</li>
+        <li>User Age: {{ user.age }}</li>
+        <li>Workplace: {{ user.workplace }}</li>
+        <li>Favorite Food: {{ user.favorite_food }}</li>
+        <li>Favorite Place: {{ user.favorite_place }}</li>
+        <li>Latest Post: {{ user.latest_post }}</li>
+    </ul>
+    {% if user.friends %}
+    <h2>Friend List</h2>
+    <ul>
+        {% for friend in user.friends %}
+            <li>{{ friend }}</li>
+        {% endfor %}
+    </ul>
+    {% else %}
+    <p>No friends yet!</p>
+    {% endif %}
+    
+    <a href="{{ url_for('create_profile') }}">Create Profile</a>
+</body>
+</html>
