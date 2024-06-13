@@ -5,4 +5,4 @@ set -e
 docker pull demorepo123/demo-flask-application
 
 # Run the Docker image as a container
-docker run -d -p 8080:8080 demorepo123/demo-flask-application 
+docker run -d -p 8080:8000 demorepo123/demo-flask-application 
